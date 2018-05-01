@@ -26,16 +26,16 @@ module Dijkstra
       run
     end
 
-    def shortest_route
+    def shortest_path
       Path.route(paths, destination_path).reverse
     end
 
-    def shortest_path
-      shortest_route.map(&:vertex).join(' - ')
+    def shortest_route
+      shortest_path.map(&:vertex).join(' - ')
     end
 
     def shortest_distance
-      shortest_route.sum(&:distance)
+      shortest_path.sum(&:distance)
     end
 
     def vertices_for(edges)

@@ -48,31 +48,31 @@ RSpec.describe Dijkstra::Algorithm do
     it { expect(algorithm.neighbors('F')).to eq(['A', 'C', 'E']) }
   end
 
-  describe '#shortest_route' do
-    before { algorithm.run }
-    it { expect(algorithm.shortest_route).to be_a(Array) }
-    it { expect(algorithm.shortest_route.size).to eq(4) }
-    it { expect(algorithm.shortest_route[0]).to be_a(Dijkstra::Path) }
-    it { expect(algorithm.shortest_route[0].vertex).to eq('A') }
-    it { expect(algorithm.shortest_route[0].distance).to eq(0) }
-    it { expect(algorithm.shortest_route[0].complete).to be_truthy }
-    it { expect(algorithm.shortest_route[1]).to be_a(Dijkstra::Path) }
-    it { expect(algorithm.shortest_route[1].vertex).to eq('C') }
-    it { expect(algorithm.shortest_route[1].distance).to eq(9) }
-    it { expect(algorithm.shortest_route[1].complete).to be_truthy }
-    it { expect(algorithm.shortest_route[2]).to be_a(Dijkstra::Path) }
-    it { expect(algorithm.shortest_route[2].vertex).to eq('F') }
-    it { expect(algorithm.shortest_route[2].distance).to eq(2) }
-    it { expect(algorithm.shortest_route[2].complete).to be_truthy }
-    it { expect(algorithm.shortest_route[3]).to be_a(Dijkstra::Path) }
-    it { expect(algorithm.shortest_route[3].vertex).to eq('E') }
-    it { expect(algorithm.shortest_route[3].distance).to eq(9) }
-    it { expect(algorithm.shortest_route[3].complete).to be_truthy }
-  end
-
   describe '#shortest_path' do
     before { algorithm.run }
-    it { expect(algorithm.shortest_path).to eq('A - C - F - E') }
+    it { expect(algorithm.shortest_path).to be_a(Array) }
+    it { expect(algorithm.shortest_path.size).to eq(4) }
+    it { expect(algorithm.shortest_path[0]).to be_a(Dijkstra::Path) }
+    it { expect(algorithm.shortest_path[0].vertex).to eq('A') }
+    it { expect(algorithm.shortest_path[0].distance).to eq(0) }
+    it { expect(algorithm.shortest_path[0].complete).to be_truthy }
+    it { expect(algorithm.shortest_path[1]).to be_a(Dijkstra::Path) }
+    it { expect(algorithm.shortest_path[1].vertex).to eq('C') }
+    it { expect(algorithm.shortest_path[1].distance).to eq(9) }
+    it { expect(algorithm.shortest_path[1].complete).to be_truthy }
+    it { expect(algorithm.shortest_path[2]).to be_a(Dijkstra::Path) }
+    it { expect(algorithm.shortest_path[2].vertex).to eq('F') }
+    it { expect(algorithm.shortest_path[2].distance).to eq(2) }
+    it { expect(algorithm.shortest_path[2].complete).to be_truthy }
+    it { expect(algorithm.shortest_path[3]).to be_a(Dijkstra::Path) }
+    it { expect(algorithm.shortest_path[3].vertex).to eq('E') }
+    it { expect(algorithm.shortest_path[3].distance).to eq(9) }
+    it { expect(algorithm.shortest_path[3].complete).to be_truthy }
+  end
+
+  describe '#shortest_route' do
+    before { algorithm.run }
+    it { expect(algorithm.shortest_route).to eq('A - C - F - E') }
   end
 
   describe '#shortest_distance' do

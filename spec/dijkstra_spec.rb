@@ -16,9 +16,9 @@ RSpec.describe Dijkstra do
 
     let(:algorithm) { Dijkstra.algorithm(array, 'A', 'E')}
 
-    describe '#shortest_path' do
+    describe '#shortest_route' do
       before { algorithm.run }
-      it { expect(algorithm.shortest_path).to eq('A - C - F - E') }
+      it { expect(algorithm.shortest_route).to eq('A - C - F - E') }
     end
 
     describe '#shortest_distance' do
