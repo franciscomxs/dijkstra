@@ -10,4 +10,8 @@ rescue LoadError
 end
 
 module Dijkstra
+  def self.algorithm(array, origin, destination)
+    edges = array.map { |edge| Dijkstra::Edge.new(*edge) }
+    algorithm = Dijkstra::Algorithm.new(Dijkstra::Graph.new(edges), origin, destination)
+  end
 end
