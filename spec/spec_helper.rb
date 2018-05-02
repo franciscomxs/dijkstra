@@ -1,8 +1,12 @@
 require "bundler/setup"
-require "dijkstra"
+
+require 'coveralls'
+Coveralls.wear!
 
 require 'simplecov'
 SimpleCov.start
+
+require 'dijkstra'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
