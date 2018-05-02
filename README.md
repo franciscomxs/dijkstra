@@ -1,5 +1,11 @@
 # Dijkstra
 
+[![Build Status](https://travis-ci.org/franciscomxs/dijkstra.svg?branch=master)](https://travis-ci.org/franciscomxs/dijkstra)
+[![Coverage Status](https://coveralls.io/repos/github/franciscomxs/dijkstra/badge.svg?branch=master)](https://coveralls.io/github/franciscomxs/dijkstra?branch=master)
+[![Code Climate](https://codeclimate.com/github/franciscomxs/dijkstra/badges/gpa.svg)](https://codeclimate.com/github/franciscomxs/dijkstra)
+
+
+
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/dijkstra`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
@@ -22,7 +28,33 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+graph = [['A', 'B', 7],
+['A', 'C', 9],
+['A', 'F', 14],
+['B', 'C', 10],
+['B', 'D', 15],
+['C', 'D', 11],
+['C', 'F', 2],
+['D', 'E', 6],
+['E', 'F', 9]]
+
+origin = 'A'
+
+destination = 'E'
+
+dijkstra = Dijkstra.algorithm(graph, origin, destination)
+
+dijkstra.shortest_route
+=> 'A - C - F - E'
+
+dijkstra.shortest_distance
+=> 20
+
+# To get all steps:
+dijkstra.shortest_path
+=> [<Dijkstra::Path....]
+```
 
 ## Development
 
